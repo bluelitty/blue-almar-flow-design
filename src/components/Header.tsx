@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,12 +19,15 @@ const Header = () => {
     };
   }, []);
 
-  // Navigation items
+  // Navigation items - updated to include all new pages
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Project Finance', href: '/project-finance' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Asset Management', href: '/asset-management' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'M&A', href: '/merger-acquisitions' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -35,26 +39,38 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="#home" className="text-2xl font-heading font-bold text-bluelitty-navy">
+          <Link to="/" className="text-2xl font-heading font-bold text-bluelitty-navy">
             Bluelitty
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
-            <a 
-              key={item.label} 
-              href={item.href}
-              className={`${
-                isScrolled ? 'text-bluelitty-navy' : 'text-white'
-              } hover:text-bluelitty-blue transition-colors duration-300 font-medium`}
-            >
-              {item.label}
-            </a>
+            item.href.startsWith('/#') ? (
+              <a 
+                key={item.label} 
+                href={item.href}
+                className={`${
+                  isScrolled ? 'text-bluelitty-navy' : 'text-white'
+                } hover:text-bluelitty-blue transition-colors duration-300 font-medium`}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link 
+                key={item.label} 
+                to={item.href}
+                className={`${
+                  isScrolled ? 'text-bluelitty-navy' : 'text-white'
+                } hover:text-bluelitty-blue transition-colors duration-300 font-medium`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <a 
-            href="#contact" 
+            href="/#contact" 
             className="btn-primary"
           >
             Get in Touch
@@ -75,17 +91,28 @@ const Header = () => {
         <nav className="md:hidden bg-white py-4 px-6 shadow-lg animate-fade-in">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <a 
-                key={item.label} 
-                href={item.href}
-                className="text-bluelitty-navy hover:text-bluelitty-blue transition-colors duration-300 font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </a>
+              item.href.startsWith('/#') ? (
+                <a 
+                  key={item.label} 
+                  href={item.href}
+                  className="text-bluelitty-navy hover:text-bluelitty-blue transition-colors duration-300 font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link 
+                  key={item.label} 
+                  to={item.href}
+                  className="text-bluelitty-navy hover:text-bluelitty-blue transition-colors duration-300 font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="btn-primary text-center"
               onClick={() => setMobileMenuOpen(false)}
             >

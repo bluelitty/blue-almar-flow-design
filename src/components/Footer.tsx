@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="bg-bluelitty-navy text-white py-12">
@@ -16,38 +18,23 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Services', 'Projects', 'Contact'].map(link => (
-                <li key={link}>
-                  <a 
-                    href={`#${link.toLowerCase().replace(' ', '-')}`}
-                    className="text-bluelitty-light hover:text-white transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/" className="text-bluelitty-light hover:text-white transition-colors duration-300">Home</Link></li>
+              <li><Link to="/projects" className="text-bluelitty-light hover:text-white transition-colors duration-300">Projects</Link></li>
+              <li><Link to="/blog" className="text-bluelitty-light hover:text-white transition-colors duration-300">Blog</Link></li>
+              <li><a href="/#about" className="text-bluelitty-light hover:text-white transition-colors duration-300">About Us</a></li>
+              <li><a href="/#contact" className="text-bluelitty-light hover:text-white transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
           
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4 text-white">Services</h3>
+            <h3 className="text-xl font-semibold mb-4 text-white">Our Solutions</h3>
             <ul className="space-y-2">
-              {[
-                'Desalination Technology', 
-                'Water Management', 
-                'Wastewater Treatment', 
-                'Sustainability Consulting'
-              ].map(service => (
-                <li key={service}>
-                  <a 
-                    href="#services" 
-                    className="text-bluelitty-light hover:text-white transition-colors duration-300"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/project-finance" className="text-bluelitty-light hover:text-white transition-colors duration-300">Project Finance</Link></li>
+              <li><Link to="/asset-management" className="text-bluelitty-light hover:text-white transition-colors duration-300">Asset Management</Link></li>
+              <li><Link to="/merger-acquisitions" className="text-bluelitty-light hover:text-white transition-colors duration-300">Merger & Acquisitions</Link></li>
+              <li><a href="/#services" className="text-bluelitty-light hover:text-white transition-colors duration-300">Desalination Technology</a></li>
+              <li><a href="/#services" className="text-bluelitty-light hover:text-white transition-colors duration-300">Water Management</a></li>
             </ul>
           </div>
           

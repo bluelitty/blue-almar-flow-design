@@ -127,6 +127,11 @@ export default {
 			backgroundImage: {
 				'hero-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80')",
 				'plant-pattern': "linear-gradient(rgba(11, 57, 84, 0.6), rgba(11, 57, 84, 0.7)), url('https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&q=80')",
+				'finance-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?auto=format&fit=crop&q=80')",
+				'projects-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1472157592780-9e5265f17f8f?auto=format&fit=crop&q=80')",
+				'assets-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80')",
+				'blog-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&q=80')",
+				'ma-pattern': "linear-gradient(rgba(11, 57, 84, 0.7), rgba(11, 57, 84, 0.8)), url('https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?auto=format&fit=crop&q=80')",
 			}
 		}
 	},
